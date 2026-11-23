@@ -19,7 +19,7 @@ const invitacion = {
   mapsURL: "https://www.google.com/maps/search/?api=1&query=Casa%20Club%20Condominio%20Terra%20Alta%20Mixco%20Guatemala",
 
   // Número con código de país, sin + ni espacios
-  whatsapp: ""
+  whatsapp: "50259936057"
 };
 
 /* 2. FUNCIONES AUXILIARES */
