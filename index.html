@@ -1,0 +1,254 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Invitación a la graduación universitaria de Abrahm Telis">
+
+  <title>Graduación Universitaria | Abrahm Telis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- PANTALLA DE BIENVENIDA -->
+  <div
+    class="welcome"
+    id="bienvenida"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="bienvenida-titulo"
+  >
+    <div class="welcome-inner">
+
+      <p class="eyebrow">UNA CELEBRACIÓN ESPECIAL</p>
+
+      <span class="welcome-cap" aria-hidden="true">
+        ✦ 🎓 ✦
+      </span>
+
+      <h2 id="bienvenida-titulo">Mi Graduación</h2>
+
+      <p class="welcome-name">ABRAHM TELIS</p>
+
+      <p class="welcome-date">17 · DICIEMBRE · 2026</p>
+
+      <button
+        class="button"
+        id="abrir"
+        type="button"
+      >
+        ABRIR INVITACIÓN ↓
+      </button>
+
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido" inert>
+
+    <!-- PORTADA -->
+    <section class="hero" aria-labelledby="titulo">
+
+      <div class="ornament">
+        ✦ &nbsp; ✧ &nbsp; ✦
+      </div>
+
+      <p class="eyebrow reveal">
+        CON MUCHA ALEGRÍA TE INVITO A CELEBRAR
+      </p>
+
+      <span class="cap" aria-hidden="true">🎓</span>
+
+      <h1 id="titulo" class="reveal">
+        Mi Graduación
+      </h1>
+
+      <div class="rule"></div>
+
+      <p class="degree reveal">
+        GRADUACIÓN UNIVERSITARIA
+      </p>
+
+      <h2 id="nombre" class="gold-glow reveal">
+        Abrahm Telis
+      </h2>
+
+      <!-- FOTOGRAFÍA PROVISIONAL -->
+      <figure class="portrait reveal-photo">
+
+        <img
+          src="assets/foto-graduacion.jpeg"
+          alt="Ilustración provisional de graduación universitaria"
+          loading="lazy"
+        >
+
+        <figcaption>
+          Un logro para recordar
+        </figcaption>
+
+      </figure>
+
+      <!-- MENSAJE -->
+      <p class="message reveal">
+        Cada esfuerzo, cada desvelo y cada sueño
+        me han traído hasta aquí.
+
+        Será un honor compartir este momento contigo.
+      </p>
+
+      <p class="date reveal" id="fecha-portada">
+        17 de diciembre de 2026
+      </p>
+
+      <a class="button" href="#detalles">
+        VER INVITACIÓN
+        <span aria-hidden="true">↓</span>
+      </a>
+
+      <div class="ornament bottom">
+        ✦ &nbsp; ✧ &nbsp; ✦
+      </div>
+
+    </section>
+
+    <!-- DETALLES DEL EVENTO -->
+    <section
+      class="details"
+      id="detalles"
+      aria-labelledby="detalles-titulo"
+    >
+
+      <p class="eyebrow reveal">
+        UN DÍA PARA RECORDAR
+      </p>
+
+      <h2 id="detalles-titulo" class="reveal">
+        Celebremos juntos
+      </h2>
+
+      <p class="reveal">
+        Los mejores momentos se disfrutan
+        en compañía de quienes más queremos.
+      </p>
+
+      <!-- FECHA Y HORA -->
+      <div class="detail-card reveal">
+
+        <span class="detail-icon" aria-hidden="true">
+          ✧
+        </span>
+
+        <h3>Fecha y hora</h3>
+
+        <p id="fecha-evento">
+          17 de diciembre de 2026
+        </p>
+
+        <p id="hora-evento">
+          Hora pendiente de confirmar
+        </p>
+
+      </div>
+
+      <!-- UBICACIÓN -->
+      <div class="detail-card reveal">
+
+        <span class="detail-icon" aria-hidden="true">
+          ⌖
+        </span>
+
+        <h3>Lugar</h3>
+
+        <p id="lugar-evento">
+          Lugar pendiente de confirmar
+        </p>
+
+        <a
+          id="mapa"
+          class="text-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >
+          VER UBICACIÓN
+        </a>
+
+      </div>
+
+      <!-- CUENTA REGRESIVA -->
+      <h3 class="countdown-title reveal">
+        Faltan
+      </h3>
+
+      <div
+        class="countdown reveal"
+        id="cuenta"
+        aria-live="off"
+      >
+
+        <div>
+          <strong id="dias">--</strong>
+          <span>Días</span>
+        </div>
+
+        <div>
+          <strong id="horas">--</strong>
+          <span>Horas</span>
+        </div>
+
+        <div>
+          <strong id="minutos">--</strong>
+          <span>Minutos</span>
+        </div>
+
+        <div>
+          <strong id="segundos">--</strong>
+          <span>Segundos</span>
+        </div>
+
+      </div>
+
+      <p id="aviso-cuenta" class="hint reveal">
+        La cuenta regresiva estará disponible
+        cuando confirmemos la hora del evento.
+      </p>
+
+      <!-- CONFIRMACIÓN -->
+      <a
+        id="confirmar"
+        class="button"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden
+      >
+        CONFIRMAR ASISTENCIA
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    Con cariño,
+    <span id="firma">Abrahm Telis</span>
+    ✦
+  </footer>
+
+</body>
+</html>
