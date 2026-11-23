@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -6,248 +5,267 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
   <meta name="description" content="Invitación a la graduación universitaria de Abrahm Telis">
-
   <title>Graduación Universitaria | Abrahm Telis</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- Vista previa para WhatsApp y redes sociales -->
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="Graduación Universitaria | Abrahm Telis">
+
+<meta property="og:description" content="Te invito a celebrar conmigo este gran logro. 17 de diciembre de 2026.">
+
+<meta property="og:url" content="https://luis4170.github.io/invitacion-graduacion/">
+
+<meta property="og:image" content="https://luis4170.github.io/invitacion-graduacion/assets/portada-whatsapp.png">
+
+<meta property="og:image:type" content="image/png">
+
+<meta property="og:locale" content="es_GT">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
-<body>
+<body class="locked">
 
-  <!-- PANTALLA DE BIENVENIDA -->
-  <div
-    class="welcome"
-    id="bienvenida"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="bienvenida-titulo"
-  >
+  <!-- Música de fondo -->
+  <audio id="musica" loop preload="none">
+    <source src="assets/musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Control de música -->
+  <button id="control-musica"
+          class="music-control"
+          type="button"
+          aria-label="Reproducir música"
+          aria-pressed="false"
+          hidden>
+    <span id="icono-musica" aria-hidden="true">♪</span>
+  </button>
+
+  <!-- Contenedor de partículas -->
+  <div id="particulas" class="particles" aria-hidden="true"></div>
+
+  <!-- Pantalla inicial -->
+  <div class="welcome" id="bienvenida" role="dialog"
+       aria-modal="true" aria-labelledby="bienvenida-titulo">
+
     <div class="welcome-inner">
-
       <p class="eyebrow">UNA CELEBRACIÓN ESPECIAL</p>
-
-      <span class="welcome-cap" aria-hidden="true">
-        ✦ 🎓 ✦
-      </span>
+      <span class="welcome-cap" aria-hidden="true">✦ 🎓 ✦</span>
 
       <h2 id="bienvenida-titulo">Mi Graduación</h2>
 
       <p class="welcome-name">ABRAHM TELIS</p>
-
       <p class="welcome-date">17 · DICIEMBRE · 2026</p>
 
-      <button
-        class="button"
-        id="abrir"
-        type="button"
-      >
+      <button class="button" id="abrir" type="button">
         ABRIR INVITACIÓN ↓
       </button>
-
     </div>
   </div>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <main id="contenido" inert>
 
-    <!-- PORTADA -->
+    <!-- Portada -->
     <section class="hero" aria-labelledby="titulo">
 
-      <div class="ornament">
-        ✦ &nbsp; ✧ &nbsp; ✦
-      </div>
+      <div class="ornament">✦ &nbsp; ✧ &nbsp; ✦</div>
 
-      <p class="eyebrow reveal">
-        CON MUCHA ALEGRÍA TE INVITO A CELEBRAR
-      </p>
+      <p class="eyebrow">CON MUCHA ALEGRÍA TE INVITO A CELEBRAR</p>
 
       <span class="cap" aria-hidden="true">🎓</span>
 
-      <h1 id="titulo" class="reveal">
-        Mi Graduación
-      </h1>
+      <h1 id="titulo">Mi Graduación</h1>
 
       <div class="rule"></div>
 
-      <p class="degree reveal">
-        GRADUACIÓN UNIVERSITARIA
-      </p>
+      <p class="degree">GRADUACIÓN UNIVERSITARIA</p>
 
-      <h2 id="nombre" class="gold-glow reveal">
-        Abrahm Telis
-      </h2>
+      <h2 id="nombre" class="gold-glow">Abrahm Telis</h2>
 
-      <!-- FOTOGRAFÍA PROVISIONAL -->
       <figure class="portrait reveal-photo">
-
-        <img
-          src="assets/foto-graduacion.jpeg"
-          alt="Ilustración provisional de graduación universitaria"
-          loading="lazy"
-        >
-
-        <figcaption>
-          Un logro para recordar
-        </figcaption>
-
+        <img src="assets/foto-graduacion.jpeg"
+             alt="Fotografía de Abrahm Telis"
+             loading="lazy">
+        <figcaption>Un logro para recordar</figcaption>
       </figure>
 
-      <!-- MENSAJE -->
       <p class="message reveal">
-        Cada esfuerzo, cada desvelo y cada sueño
-        me han traído hasta aquí.
-
+        Cada esfuerzo, cada desvelo y cada sueño me han traído hasta aquí.
         Será un honor compartir este momento contigo.
       </p>
 
-      <p class="date reveal" id="fecha-portada">
+      <p class="date" id="fecha-portada">
         17 de diciembre de 2026
       </p>
 
       <a class="button" href="#detalles">
-        VER INVITACIÓN
-        <span aria-hidden="true">↓</span>
+        VER INVITACIÓN <span aria-hidden="true">↓</span>
       </a>
 
-      <div class="ornament bottom">
-        ✦ &nbsp; ✧ &nbsp; ✦
-      </div>
-
+      <div class="ornament bottom">✦ &nbsp; ✧ &nbsp; ✦</div>
     </section>
 
-    <!-- DETALLES DEL EVENTO -->
-    <section
-      class="details"
-      id="detalles"
-      aria-labelledby="detalles-titulo"
-    >
+    <!-- Información del evento -->
+    <section class="details" id="detalles"
+             aria-labelledby="detalles-titulo">
 
-      <p class="eyebrow reveal">
-        UN DÍA PARA RECORDAR
-      </p>
+      <p class="eyebrow reveal">UN DÍA PARA RECORDAR</p>
 
       <h2 id="detalles-titulo" class="reveal">
         Celebremos juntos
       </h2>
 
       <p class="reveal">
-        Los mejores momentos se disfrutan
-        en compañía de quienes más queremos.
+        Los mejores momentos se disfrutan en compañía
+        de quienes más queremos.
       </p>
 
-      <!-- FECHA Y HORA -->
       <div class="detail-card reveal">
-
-        <span class="detail-icon" aria-hidden="true">
-          ✧
-        </span>
+        <span class="detail-icon" aria-hidden="true">✧</span>
 
         <h3>Fecha y hora</h3>
 
-        <p id="fecha-evento">
-          17 de diciembre de 2026
-        </p>
-
-        <p id="hora-evento">
-          Hora pendiente de confirmar
-        </p>
-
+        <p id="fecha-evento">Jueves 17 de diciembre de 2026</p>
+        <p id="hora-evento">7:00 p. m.</p>
       </div>
 
-      <!-- UBICACIÓN -->
       <div class="detail-card reveal">
-
-        <span class="detail-icon" aria-hidden="true">
-          ⌖
-        </span>
+        <span class="detail-icon" aria-hidden="true">⌖</span>
 
         <h3>Lugar</h3>
 
         <p id="lugar-evento">
-          Lugar pendiente de confirmar
+          Casa Club, Condominio Terra Alta, km 16, Mixco, Guatemala
         </p>
 
-        <a
-          id="mapa"
-          class="text-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          hidden
-        >
+        <a id="mapa" class="text-link" href="#"
+           target="_blank" rel="noopener noreferrer" hidden>
           VER UBICACIÓN
+        </a>
+      </div>
+    </section>
+
+    <!-- Calendario -->
+    <section class="calendar-section"
+             aria-labelledby="calendario-titulo">
+
+      <div class="calendar-content">
+
+        <p class="eyebrow reveal">RESERVA ESTA FECHA</p>
+
+        <h2 id="calendario-titulo" class="reveal">
+          Un día especial
+        </h2>
+
+        <p class="calendar-intro reveal">
+          Acompáñame a celebrar este logro que guardaré siempre en mi corazón.
+        </p>
+
+        <div class="event-date-display reveal">
+          <span class="event-weekday">JUEVES</span>
+          <span class="event-day">17</span>
+          <span class="event-month">DICIEMBRE</span>
+        </div>
+
+        <p class="event-year reveal">2026</p>
+        <p class="event-time reveal">7:00 p. m.</p>
+
+        <div class="calendar-box reveal">
+
+          <div class="calendar-heading">Diciembre 2026</div>
+
+          <div class="calendar-grid"
+               aria-label="Calendario de diciembre de 2026">
+
+            <span class="calendar-weekday">Lu</span>
+            <span class="calendar-weekday">Ma</span>
+            <span class="calendar-weekday">Mi</span>
+            <span class="calendar-weekday">Ju</span>
+            <span class="calendar-weekday">Vi</span>
+            <span class="calendar-weekday">Sá</span>
+            <span class="calendar-weekday">Do</span>
+
+            <span class="calendar-empty"></span>
+
+            <span>1</span><span>2</span><span>3</span>
+            <span>4</span><span>5</span><span>6</span>
+            <span>7</span><span>8</span><span>9</span>
+            <span>10</span><span>11</span><span>12</span>
+            <span>13</span><span>14</span><span>15</span>
+            <span>16</span>
+
+            <span class="calendar-selected"
+                  aria-label="Jueves 17 de diciembre, día del evento">
+              17
+            </span>
+
+            <span>18</span><span>19</span><span>20</span>
+            <span>21</span><span>22</span><span>23</span>
+            <span>24</span><span>25</span><span>26</span>
+            <span>27</span><span>28</span><span>29</span>
+            <span>30</span><span>31</span>
+
+          </div>
+        </div>
+
+        <a id="agregar-calendario"
+           class="button calendar-button reveal"
+           href="#" target="_blank" rel="noopener noreferrer">
+          + AÑADIR AL CALENDARIO
         </a>
 
       </div>
+    </section>
 
-      <!-- CUENTA REGRESIVA -->
-      <h3 class="countdown-title reveal">
-        Faltan
-      </h3>
+    <!-- Cuenta regresiva y confirmación -->
+    <section class="closing-section">
 
-      <div
-        class="countdown reveal"
-        id="cuenta"
-        aria-live="off"
-      >
+      <div class="reveal">
 
-        <div>
-          <strong id="dias">--</strong>
-          <span>Días</span>
+        <p class="eyebrow">LA CELEBRACIÓN SE ACERCA</p>
+
+        <h2 class="countdown-title">Faltan</h2>
+
+        <div class="countdown" id="cuenta" aria-live="off">
+          <div><strong id="dias">--</strong><span>Días</span></div>
+          <div><strong id="horas">--</strong><span>Horas</span></div>
+          <div><strong id="minutos">--</strong><span>Minutos</span></div>
+          <div><strong id="segundos">--</strong><span>Segundos</span></div>
         </div>
 
-        <div>
-          <strong id="horas">--</strong>
-          <span>Horas</span>
-        </div>
-
-        <div>
-          <strong id="minutos">--</strong>
-          <span>Minutos</span>
-        </div>
-
-        <div>
-          <strong id="segundos">--</strong>
-          <span>Segundos</span>
-        </div>
+        <p id="aviso-cuenta" class="hint"></p>
 
       </div>
 
-      <p id="aviso-cuenta" class="hint reveal">
-        La cuenta regresiva estará disponible
-        cuando confirmemos la hora del evento.
-      </p>
+      <div class="rsvp-section reveal">
 
-      <!-- CONFIRMACIÓN -->
-      <a
-        id="confirmar"
-        class="button"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        hidden
-      >
-        CONFIRMAR ASISTENCIA
-      </a>
+        <div class="rule"></div>
 
+        <p class="eyebrow">SERÁ UN HONOR CONTAR CONTIGO</p>
+
+        <h2>Confirma tu asistencia</h2>
+
+        <p>Tu presencia hará aún más especial este momento.</p>
+
+        <a id="confirmar" class="button rsvp-button"
+           href="#" target="_blank"
+           rel="noopener noreferrer" hidden>
+          CONFIRMAR ASISTENCIA
+        </a>
+
+      </div>
     </section>
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
   <footer>
-    Con cariño,
-    <span id="firma">Abrahm Telis</span>
-    ✦
+    Con cariño, <span id="firma">Abrahm Telis</span> ✦
   </footer>
 
 </body>
